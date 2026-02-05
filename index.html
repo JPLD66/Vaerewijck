@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maarten Vaerewijck | Direct Response Copywriter & Creative Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a1628;
+            --bg-secondary: #111d33;
+            --text-primary: #ffffff;
+            --text-secondary: #b8c5d6;
+            --text-muted: #7a8a9e;
+            --accent: #e63946;
+            --accent-dark: #c1121f;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated background gradient */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(230, 57, 70, 0.05) 0%, transparent 50%),
+                var(--bg-primary);
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 2rem;
+            background: rgba(10, 22, 40, 0.95);
+        }
+
+        .nav-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero-pronunciation {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.7s;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .hero-meta-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        /* Experience Section */
+        .experience-intro {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .client-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .client-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.4s ease;
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .client-card:hover::before {
+            height: 100%;
+        }
+
+        .client-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .client-highlight {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .client-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .client-description ul {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .client-description li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-description li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* 2025 Section */
+        .year-2025 {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(230, 57, 70, 0.05) 100%);
+            border-radius: 20px;
+            padding: 4rem;
+            margin-top: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .year-2025 h3 {
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .achievements-list li:hover {
+            background: rgba(230, 57, 70, 0.1);
+            transform: translateX(5px);
+        }
+
+        .achievement-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .achievement-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+        }
+
+        /* CMO Section */
+        .cmo-section {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .cmo-header {
+            padding: 4rem 4rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cmo-header h3 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .cmo-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .cmo-wins {
+            padding: 3rem 4rem 4rem;
+        }
+
+        .cmo-wins h4 {
+            font-size: 1rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .wins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .win-card {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .win-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .win-stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .win-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .win-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Notable Card */
+        .notable-card {
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.15) 0%, var(--bg-secondary) 100%);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .notable-card h4 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .notable-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .author-info h5 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .contact-section .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-description {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 1.25rem 2.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .contact-email:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.2);
+        }
+
+        .contact-email svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .year-2025,
+            .cmo-header,
+            .cmo-wins {
+                padding: 2rem;
+            }
+
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-email {
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">Maarten<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Direct Response Copywriter & Creative Strategist</span>
+                <h1>Maarten Vaerewijck</h1>
+                <p class="hero-pronunciation">(Pronounced: Martin Var-awake)</p>
+                <p class="hero-description">
+                    I write copy that sells. Since 2019, I've helped 7, 8, and 9-figure DTC and info product brands generate millions in revenue through high-converting VSLs, ads, emails, and full-funnel strategies.
+                </p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        Belgium
+                    </div>
+                    <div class="hero-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                        </svg>
+                        Dutch & English (fluent) / French & Spanish (conversational)
+                    </div>
+                </div>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary">
+                        Work With Me
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                    <a href="#experience" class="btn btn-secondary">See My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Track Record</span>
+                <h2 class="section-title">Clients & Results</h2>
+            </div>
+
+            <p class="experience-intro fade-in">
+                I specialize in long-form (VSLs, TSLs, Upsells) and short-form (YouTube ads, Emails) direct response copy. Here are some of the brands I've helped scale:
+            </p>
+
+            <div class="clients-grid">
+                <div class="client-card fade-in">
+                    <h3 class="client-name">4Patriots</h3>
+                    <p class="client-highlight">$1M+ Monthly Ad Spend</p>
+                    <div class="client-description">
+                        <p>At the TOP of YouTube advertising:</p>
+                        <ul>
+                            <li>Wrote dozens of long-form ad scripts for this 8-figure DTC brand</li>
+                            <li>Millions of views and thousands of sales generated</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">Survival Frog</h3>
+                    <p class="client-highlight">4,000%+ Email ROI</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>Hundreds of record-setting eCommerce emails</li>
+                            <li>High-converting sales pages</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">ShopSolar</h3>
+                    <p class="client-highlight">Full-Stack Marketing</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>ECOM landing pages & offer consulting</li>
+                            <li>Solar Academy & EMP-proof offer bundles</li>
+                            <li>Ad creative copy & email marketing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">Sava Bros</h3>
+                    <p class="client-highlight">Millions in Sales</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>Dozens of Survival VSLs</li>
+                            <li>Sales pages & upsells</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">Spy Briefing</h3>
+                    <p class="client-highlight">Ex-CIA Client</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>Worked with ex-CIA agent Jason Hanson</li>
+                            <li>New angles & sales pages for his product line</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">LifeVac</h3>
+                    <p class="client-highlight">Control-Beating Ads</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>Wrote multiple winning ad controls</li>
+                            <li>Created their new brand tagline</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">Currency and Coin</h3>
+                    <p class="client-highlight">Full Funnel Build</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>Brand new funnel from scratch</li>
+                            <li>Ads + VSL/TSL + Upsell + Emails</li>
+                            <li>Brought this business into online direct response</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="client-card fade-in">
+                    <h3 class="client-name">StoneForceMedia</h3>
+                    <p class="client-highlight">Clickbank VSLs</p>
+                    <div class="client-description">
+                        <ul>
+                            <li>Long-form info product VSL upsells</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notable-card fade-in">
+                <h4>Donald J. Trump (POTUS)</h4>
+                <p>Invited to strategize the online campaign for his NFT product launch in 2022</p>
+            </div>
+
+            <div class="year-2025 fade-in">
+                <span class="year-badge">2025</span>
+                <h3>The Year of Creative Strategy</h3>
+                <ul class="achievements-list">
+                    <li>
+                        <span class="achievement-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Lead Creative Strategist for 8-figure DTC supplement brand. My AI static ads broke new ground with <strong style="color: var(--accent);">10%+ CTR</strong> and <strong style="color: var(--accent);">3+ ROAS</strong></span>
+                    </li>
+                    <li>
+                        <span class="achievement-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Expanded scope as fullstack creative strategist: copy, UGC talent briefing, and film crew direction</span>
+                    </li>
+                    <li>
+                        <span class="achievement-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Hook and hold rates that broke agency records</span>
+                    </li>
+                    <li>
+                        <span class="achievement-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Heavy AI integration for research, hook creation, and static ad generation</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="results">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Case Study</span>
+                <h2 class="section-title">CMO Results</h2>
+            </div>
+
+            <div class="cmo-section fade-in">
+                <div class="cmo-header">
+                    <h3>Full-Time CMO for Darius Lukas</h3>
+                    <p>A 7-figure personal brand selling AI info products. I ran the entire marketing operation.</p>
+                </div>
+                <div class="cmo-wins">
+                    <h4>Key Wins</h4>
+                    <div class="wins-grid">
+                        <div class="win-card">
+                            <div class="win-stat">$100K+</div>
+                            <div class="win-label">Monthly Ad Spend</div>
+                            <div class="win-description">Launched profitable ad campaigns as stand-in Creative Strategist (even featured in a few)</div>
+                        </div>
+                        <div class="win-card">
+                            <div class="win-stat">+110%</div>
+                            <div class="win-label">AOV Increase</div>
+                            <div class="win-description">Through funnel optimization: upsells and order bump strategy</div>
+                        </div>
+                        <div class="win-card">
+                            <div class="win-stat">5</div>
+                            <div class="win-label">New Funnels</div>
+                            <div class="win-description">Launched in 10 months. One had a $66,000 profit launch in just 10 days.</div>
+                        </div>
+                        <div class="win-card">
+                            <div class="win-stat">40K+</div>
+                            <div class="win-label">Email Subscribers</div>
+                            <div class="win-description">Copy chiefed daily campaigns in Klaviyo. High open rates, click rates, and low spam triggers.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Social Proof</span>
+                <h2 class="section-title">What Clients Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        The clickthrough rates are great, open rates have been strong, and same with the EPCs. Overall, you have a ton of experience in the Survival field and I would definitely recommend you as a copywriter.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h5>John</h5>
+                            <span>Survival Frog (eCom)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        If you're looking for a copywriter Maarten/Writebeard is definitely your guy. Take a difficult brief and he'll get it done, respond well to feedback and overdeliver on each request. I sincerely couldn't recommend Maarten more strongly to you.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h5>Shaun</h5>
+                            <span>Survivopedia (DR)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        I really appreciate the fact that the deadline was met, that you are very organized and predictable during the collaboration, and overall everything worked as planned.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h5>Antonia</h5>
+                            <span>StoneForceMedia (DR)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 3rem; color: var(--text-muted);" class="fade-in">
+                Video testimonials available on <a href="https://linkedin.com" style="color: var(--accent); text-decoration: none;">LinkedIn</a>
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header fade-in" style="text-align: center;">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+            </div>
+            <p class="contact-description fade-in">
+                Looking forward to helping you thrive. Reach out and let's discuss how I can drive results for your business.
+            </p>
+            <a href="mailto:maarten@vaerewijck.com" class="contact-email fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                maarten@vaerewijck.com
+            </a>
+            <p class="contact-note fade-in">
+                For samples of sales pages, upsells, emails, and ads — email me for the link
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2025 Maarten Vaerewijck. Direct Response Copywriter & Creative Strategist.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
