@@ -146,8 +146,28 @@
             position: relative;
         }
 
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
         .hero-content {
             width: 100%;
+        }
+
+        .hero-image {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .hero-image img {
+            max-width: 320px;
+            height: auto;
+            border-radius: 12px;
         }
 
         .hero-tag {
@@ -972,6 +992,35 @@
             }
         }
 
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .hero-image img {
+                max-width: 250px;
+            }
+
+            .hero-roles {
+                display: inline-block;
+                text-align: left;
+            }
+
+            .hero-meta {
+                justify-content: center;
+            }
+
+            .cta-group {
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
@@ -1044,39 +1093,44 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag">Direct Response Copywriter & Creative Strategist</span>
-                <h1>Maarten Vaerewijck</h1>
-                <p class="hero-pronunciation">(Pronounced: Martin Var-awake)</p>
-                <ul class="hero-roles">
-                    <li>Direct Response Copywriter</li>
-                    <li>Lead Creative Strategist</li>
-                    <li>Former CMO</li>
-                    <li>AI Workflow Builder</li>
-                </ul>
-                <div class="hero-meta">
-                    <div class="hero-meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                        Belgium
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag">Direct Response Copywriter & Creative Strategist</span>
+                    <h1>Maarten Vaerewijck</h1>
+                    <p class="hero-pronunciation">(Pronounced: Martin Var-awake)</p>
+                    <ul class="hero-roles">
+                        <li>Direct Response Copywriter</li>
+                        <li>Lead Creative Strategist</li>
+                        <li>Former CMO</li>
+                        <li>AI Workflow Builder</li>
+                    </ul>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            Belgium
+                        </div>
+                        <div class="hero-meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                            </svg>
+                            Fluent in English and Dutch
+                        </div>
                     </div>
-                    <div class="hero-meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
-                        </svg>
-                        Fluent in English and Dutch
+                    <div class="cta-group">
+                        <a href="#contact" class="btn btn-primary">
+                            Email Me
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </a>
+                        <a href="#experience" class="btn btn-secondary">My Work</a>
                     </div>
                 </div>
-                <div class="cta-group">
-                    <a href="#contact" class="btn btn-primary">
-                        Work With Me
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                        </svg>
-                    </a>
-                    <a href="#experience" class="btn btn-secondary">My Work</a>
+                <div class="hero-image">
+                    <img src="images/maarten.png" alt="Maarten Vaerewijck">
                 </div>
             </div>
         </div>
@@ -1187,8 +1241,8 @@
             </div>
 
             <div class="notable-card fade-in">
-                <h4>Donald J. Trump (POTUS)</h4>
-                <p>Invited to strategize the online campaign for his NFT product launch in 2022</p>
+                <h4>Donald J. Trump (POTUS) 🌮</h4>
+                <p>Invited to strategize the online campaign for his NFT product launch in 2022 — I declined</p>
             </div>
         </div>
     </section>
@@ -1200,16 +1254,16 @@
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">2025+ Specialization</span>
-                <h2 class="section-title">Creative Strategy & AI Implementation</h2>
+                <h2 class="section-title">AI Workflows & Funnel Strategy</h2>
             </div>
 
             <div class="strategy-intro fade-in">
                 <div class="strategy-intro-text">
                     <p>
-                        In 2025, I evolved from copywriter to <strong style="color: var(--text-primary);">fullstack creative strategist</strong>. I now lead the entire creative process: from deep research and concept development to copy, UGC talent briefing, and film crew direction.
+                        In 2025, I evolved from copywriter to <strong style="color: var(--text-primary);">AI workflow builder and funnel strategist</strong>. I build custom AI systems that live inside your Google Workspace and become your direct response marketing brain.
                     </p>
                     <p>
-                        My work at an AI-focused business gave me hands-on experience building AI workflows. Now I combine direct response expertise with AI to deliver faster research, sharper hooks, and higher-performing creatives.
+                        My work at an AI-focused business gave me hands-on experience building agentic workflows. Now I combine direct response expertise with AI to deliver faster research, sharper hooks, and higher-performing funnels.
                     </p>
                     <div class="specialization-badge">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -1280,14 +1334,20 @@
                 </div>
             </div>
 
-            <!-- DR Ideation System -->
+            <!-- Client Cortex -->
             <div class="tool-highlight fade-in">
                 <div class="tool-highlight-content">
-                    <h3>Direct Response Ideation System</h3>
+                    <h3>Client Cortex</h3>
                     <p>
-                        I built an agentic AI workflow that helps creative strategists do deep market research in minutes instead of hours. It downloads the brand's positioning and generates winning angles fast.
+                        I build custom agentic AI workflows that live inside your Google Workspace — becoming your brand's Direct Response Marketing Hub. Deep market research in minutes instead of hours. Download your brand's positioning and generate winning angles fast.
                     </p>
                     <ul class="tool-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                            Built inside your Google Workspace
+                        </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -1304,13 +1364,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
-                            Cuts research time from hours to minutes
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                            Built for DTC brands and info products
+                            Your brand's Direct Response Marketing Hub
                         </li>
                     </ul>
                 </div>
@@ -1320,8 +1374,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
                         </svg>
                     </div>
-                    <h4>DR Ideation System</h4>
-                    <p>AI-powered research & angle generation</p>
+                    <h4>Client Cortex</h4>
+                    <p>Your Direct Response Marketing Hub</p>
                 </div>
             </div>
         </div>
