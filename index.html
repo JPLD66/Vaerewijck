@@ -195,6 +195,33 @@
             animation-delay: 0.6s;
         }
 
+        .hero-roles {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-roles li {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .hero-roles li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
         .hero-meta {
             display: flex;
             flex-wrap: wrap;
@@ -380,7 +407,16 @@
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .client-role {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
             margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .client-highlight {
@@ -1012,9 +1048,12 @@
                 <span class="hero-tag">Direct Response Copywriter & Creative Strategist</span>
                 <h1>Maarten Vaerewijck</h1>
                 <p class="hero-pronunciation">(Pronounced: Martin Var-awake)</p>
-                <p class="hero-description">
-                    I write copy that sells. Since 2019, I've helped 7, 8, and 9-figure DTC and info product brands generate millions in revenue through high-converting VSLs, ads, emails, and full-funnel strategies.
-                </p>
+                <ul class="hero-roles">
+                    <li>Direct Response Copywriter</li>
+                    <li>Lead Creative Strategist</li>
+                    <li>Former CMO</li>
+                    <li>AI Workflow Builder</li>
+                </ul>
                 <div class="hero-meta">
                     <div class="hero-meta-item">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -1027,7 +1066,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
                         </svg>
-                        Dutch & English (fluent) / French & Spanish (conversational)
+                        Fluent in English and Dutch
                     </div>
                 </div>
                 <div class="cta-group">
@@ -1037,7 +1076,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
                     </a>
-                    <a href="#experience" class="btn btn-secondary">See My Work</a>
+                    <a href="#experience" class="btn btn-secondary">My Work</a>
                 </div>
             </div>
         </div>
@@ -1055,6 +1094,7 @@
             <div class="clients-grid">
                 <div class="client-card fade-in">
                     <h3 class="client-name">4Patriots</h3>
+                    <p class="client-role">Video Script Copywriter</p>
                     <p class="client-highlight">$1M+ Monthly Ad Spend</p>
                     <div class="client-description">
                         <p>At the TOP of YouTube advertising:</p>
@@ -1067,6 +1107,7 @@
 
                 <div class="client-card fade-in">
                     <h3 class="client-name">Survival Frog</h3>
+                    <p class="client-role">Email Strategist</p>
                     <p class="client-highlight">4,000%+ Email ROI</p>
                     <div class="client-description">
                         <ul>
@@ -1078,6 +1119,7 @@
 
                 <div class="client-card fade-in">
                     <h3 class="client-name">ShopSolar</h3>
+                    <p class="client-role">Funnel Strategy</p>
                     <p class="client-highlight">Full-Stack Marketing</p>
                     <div class="client-description">
                         <ul>
@@ -1329,12 +1371,12 @@
                     <div class="cmo-testimonial-content">
                         <span class="cmo-testimonial-quote">"</span>
                         <div class="cmo-testimonial-text">
-                            <p>We had a record month in September where we managed to quadruple our profit and increase the profit margin by 100%. Maarten has been definitely incremental to achieving that.</p>
+                            <p>Maarten is one of those rare people who just gets how to build sales funnels that work—and we've done it together on multiple 7-figure projects. He's brilliant at writing copy that connects, coming up with marketing strategies that drive results, and fine-tuning funnels to maximise performance. From improving AOV to ensuring every step of the customer journey is seamless, Maarten knows how to deliver. If you're looking to scale a digital product, he's exactly who you need in your corner.</p>
                             <div class="cmo-testimonial-author">
                                 <div class="author-avatar">D</div>
                                 <div class="author-info">
-                                    <h5>Deividas</h5>
-                                    <span>Owner of Triple Scale</span>
+                                    <h5>Darius Lukas</h5>
+                                    <span>7-Figure AI Info Product Brand</span>
                                 </div>
                             </div>
                         </div>
@@ -1365,6 +1407,20 @@
                         <div class="author-info">
                             <h5>Zac Hansen</h5>
                             <span>7-Figure Productized Coach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        We had a record month in September where we managed to quadruple our profit and increase the profit margin by 100%. Maarten has been definitely incremental to achieving that.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h5>Deividas</h5>
+                            <span>Owner of Triple Scale</span>
                         </div>
                     </div>
                 </div>
