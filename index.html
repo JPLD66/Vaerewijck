@@ -11,6 +11,7 @@
         :root {
             --bg-primary: #0a1628;
             --bg-secondary: #111d33;
+            --bg-tertiary: #0d1e2f;
             --text-primary: #ffffff;
             --text-secondary: #b8c5d6;
             --text-muted: #7a8a9e;
@@ -274,9 +275,33 @@
             }
         }
 
+        /* Section Transitions */
+        .section-transition {
+            height: 120px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .section-transition-reverse {
+            height: 120px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .section-transition-accent {
+            height: 120px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+        }
+
         /* Sections */
         section {
-            padding: 8rem 0;
+            padding: 6rem 0;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .section-accent {
+            background: var(--bg-tertiary);
         }
 
         .section-header {
@@ -298,6 +323,13 @@
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin-top: 1rem;
         }
 
         /* Experience Section */
@@ -385,150 +417,13 @@
             border-radius: 50%;
         }
 
-        /* 2025 Section */
-        .year-2025 {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(230, 57, 70, 0.05) 100%);
-            border-radius: 20px;
-            padding: 4rem;
-            margin-top: 4rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .year-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .year-2025 h3 {
-            font-size: 1.75rem;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .achievements-list {
-            list-style: none;
-        }
-
-        .achievements-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .achievements-list li:hover {
-            background: rgba(230, 57, 70, 0.1);
-            transform: translateX(5px);
-        }
-
-        .achievement-icon {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2px;
-        }
-
-        .achievement-icon svg {
-            width: 12px;
-            height: 12px;
-            stroke: white;
-        }
-
-        /* CMO Section */
-        .cmo-section {
-            background: var(--bg-secondary);
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .cmo-header {
-            padding: 4rem 4rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .cmo-header h3 {
-            font-size: 2rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .cmo-header p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-
-        .cmo-wins {
-            padding: 3rem 4rem 4rem;
-        }
-
-        .cmo-wins h4 {
-            font-size: 1rem;
-            color: var(--accent);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .wins-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .win-card {
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .win-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .win-stat {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .win-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .win-description {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
         /* Notable Card */
         .notable-card {
             background: linear-gradient(135deg, rgba(230, 57, 70, 0.15) 0%, var(--bg-secondary) 100%);
             border: 1px solid rgba(230, 57, 70, 0.3);
             border-radius: 12px;
             padding: 2rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
             text-align: center;
         }
 
@@ -542,9 +437,334 @@
             color: var(--text-secondary);
         }
 
+        /* Creative Strategy Section */
+        .strategy-section {
+            padding: 6rem 0;
+        }
+
+        .strategy-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .strategy-intro-text {
+            font-size: 1.1rem;
+        }
+
+        .strategy-intro-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .specialization-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(230, 57, 70, 0.15);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .strategy-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            background: rgba(230, 57, 70, 0.08);
+            border-color: rgba(230, 57, 70, 0.3);
+            transform: translateX(5px);
+        }
+
+        .achievement-card h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .achievement-card h4 svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .achievement-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tool Highlight */
+        .tool-highlight {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(230, 57, 70, 0.08) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .tool-highlight-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .tool-highlight-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-features {
+            list-style: none;
+        }
+
+        .tool-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .tool-features li svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .tool-visual {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .tool-visual-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 20px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tool-visual-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+        }
+
+        .tool-visual h4 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-visual p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* CMO Section */
+        .cmo-section {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .cmo-header {
+            padding: 3rem 3rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cmo-header h3 {
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .cmo-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .cmo-wins {
+            padding: 2.5rem 3rem;
+        }
+
+        .cmo-wins h4 {
+            font-size: 1rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .wins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .win-card {
+            padding: 1.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .win-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .win-stat {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .win-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .win-description {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* CMO Testimonial */
+        .cmo-testimonial {
+            padding: 2.5rem 3rem 3rem;
+            border-top: 1px solid var(--border-color);
+            background: rgba(230, 57, 70, 0.05);
+        }
+
+        .cmo-testimonial-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .cmo-testimonial-quote {
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.5;
+            font-family: Georgia, serif;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .cmo-testimonial-text {
+            flex: 1;
+        }
+
+        .cmo-testimonial-text p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .cmo-testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cmo-testimonial-author .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .cmo-testimonial-author .author-info h5 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.1rem;
+        }
+
+        .cmo-testimonial-author .author-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
         /* Testimonials */
         .testimonials-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
         }
 
@@ -562,6 +782,11 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
 
+        .testimonial-card.featured {
+            border-color: rgba(230, 57, 70, 0.3);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(230, 57, 70, 0.08) 100%);
+        }
+
         .testimonial-quote {
             position: absolute;
             top: 1.5rem;
@@ -574,7 +799,7 @@
         }
 
         .testimonial-text {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             position: relative;
@@ -615,7 +840,7 @@
         /* Contact Section */
         .contact-section {
             text-align: center;
-            padding: 8rem 0;
+            padding: 6rem 0;
         }
 
         .contact-section .section-title {
@@ -693,7 +918,24 @@
             transform: translateY(0);
         }
 
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .fade-in-delay-4 { transition-delay: 0.4s; }
+
         /* Mobile responsive */
+        @media (max-width: 968px) {
+            .strategy-intro {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .tool-highlight {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
@@ -708,22 +950,41 @@
             }
 
             section {
-                padding: 5rem 0;
+                padding: 4rem 0;
             }
 
-            .year-2025,
+            .section-transition,
+            .section-transition-reverse,
+            .section-transition-accent {
+                height: 60px;
+            }
+
             .cmo-header,
-            .cmo-wins {
+            .cmo-wins,
+            .cmo-testimonial {
                 padding: 2rem;
             }
 
-            .clients-grid {
+            .clients-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .achievements-grid {
                 grid-template-columns: 1fr;
             }
 
             .contact-email {
                 font-size: 1.1rem;
                 padding: 1rem 1.5rem;
+            }
+
+            .tool-highlight {
+                padding: 2rem;
             }
         }
     </style>
@@ -736,13 +997,15 @@
             <div class="nav-logo">Maarten<span>.</span></div>
             <ul class="nav-links">
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#results">Results</a></li>
+                <li><a href="#strategy">Strategy</a></li>
+                <li><a href="#cmo">CMO Results</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -780,16 +1043,14 @@
         </div>
     </section>
 
+    <!-- EXPERIENCE / CLIENTS -->
     <section id="experience">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Track Record</span>
                 <h2 class="section-title">Clients & Results</h2>
+                <p class="section-subtitle">I specialize in long-form (VSLs, TSLs, Upsells) and short-form (YouTube ads, Emails) direct response copy. Here are some of the brands I've helped scale:</p>
             </div>
-
-            <p class="experience-intro fade-in">
-                I specialize in long-form (VSLs, TSLs, Upsells) and short-form (YouTube ads, Emails) direct response copy. Here are some of the brands I've helped scale:
-            </p>
 
             <div class="clients-grid">
                 <div class="client-card fade-in">
@@ -887,59 +1148,157 @@
                 <h4>Donald J. Trump (POTUS)</h4>
                 <p>Invited to strategize the online campaign for his NFT product launch in 2022</p>
             </div>
+        </div>
+    </section>
 
-            <div class="year-2025 fade-in">
-                <span class="year-badge">2025</span>
-                <h3>The Year of Creative Strategy</h3>
-                <ul class="achievements-list">
-                    <li>
-                        <span class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+    <div class="section-transition"></div>
+
+    <!-- CREATIVE STRATEGY & AI -->
+    <section id="strategy" class="section-alt strategy-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">2025+ Specialization</span>
+                <h2 class="section-title">Creative Strategy & AI Implementation</h2>
+            </div>
+
+            <div class="strategy-intro fade-in">
+                <div class="strategy-intro-text">
+                    <p>
+                        In 2025, I evolved from copywriter to <strong style="color: var(--text-primary);">fullstack creative strategist</strong>. I now lead the entire creative process: from deep research and concept development to copy, UGC talent briefing, and film crew direction.
+                    </p>
+                    <p>
+                        My work at an AI-focused business gave me hands-on experience building AI workflows. Now I combine direct response expertise with AI to deliver faster research, sharper hooks, and higher-performing creatives.
+                    </p>
+                    <div class="specialization-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                        </svg>
+                        Current Focus Area
+                    </div>
+                </div>
+                <div class="strategy-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">10%+</div>
+                        <div class="stat-label">CTR on AI Static Ads</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3+</div>
+                        <div class="stat-label">ROAS Achieved</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">8-fig</div>
+                        <div class="stat-label">DTC Brand Lead</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">Record</div>
+                        <div class="stat-label">Hook & Hold Rates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in">
+                    <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                        Lead Creative Strategist
+                    </h4>
+                    <p>For an 8-figure DTC supplement brand. My AI static ads broke new ground with exceptional CTR and ROAS.</p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                        Full Production Oversight
+                    </h4>
+                    <p>Expanded scope to include UGC talent briefing and film crew direction. End-to-end creative control.</p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                        </svg>
+                        Agency Record Breaker
+                    </h4>
+                    <p>Hook and hold rates that broke agency records. Proven ability to capture and maintain viewer attention.</p>
+                </div>
+
+                <div class="achievement-card fade-in">
+                    <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                        </svg>
+                        AI-Powered Research
+                    </h4>
+                    <p>Heavy AI integration for research, hook creation, and static ad generation. Faster turnaround, sharper insights.</p>
+                </div>
+            </div>
+
+            <!-- DR Ideation System -->
+            <div class="tool-highlight fade-in">
+                <div class="tool-highlight-content">
+                    <h3>Direct Response Ideation System</h3>
+                    <p>
+                        I built an agentic AI workflow that helps creative strategists do deep market research in minutes instead of hours. It downloads the brand's positioning and generates winning angles fast.
+                    </p>
+                    <ul class="tool-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
-                        </span>
-                        <span>Lead Creative Strategist for 8-figure DTC supplement brand. My AI static ads broke new ground with <strong style="color: var(--accent);">10%+ CTR</strong> and <strong style="color: var(--accent);">3+ ROAS</strong></span>
-                    </li>
-                    <li>
-                        <span class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                            Deep competitor & market research on autopilot
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
-                        </span>
-                        <span>Expanded scope as fullstack creative strategist: copy, UGC talent briefing, and film crew direction</span>
-                    </li>
-                    <li>
-                        <span class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                            Generates hook angles based on proven DR frameworks
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
-                        </span>
-                        <span>Hook and hold rates that broke agency records</span>
-                    </li>
-                    <li>
-                        <span class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                            Cuts research time from hours to minutes
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                             </svg>
-                        </span>
-                        <span>Heavy AI integration for research, hook creation, and static ad generation</span>
-                    </li>
-                </ul>
+                            Built for DTC brands and info products
+                        </li>
+                    </ul>
+                </div>
+                <div class="tool-visual">
+                    <div class="tool-visual-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                        </svg>
+                    </div>
+                    <h4>DR Ideation System</h4>
+                    <p>AI-powered research & angle generation</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="results">
+    <div class="section-transition-reverse"></div>
+
+    <!-- CMO CASE STUDY -->
+    <section id="cmo">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Case Study</span>
-                <h2 class="section-title">CMO Results</h2>
+                <h2 class="section-title">CMO Experience</h2>
             </div>
 
             <div class="cmo-section fade-in">
                 <div class="cmo-header">
                     <h3>Full-Time CMO for Darius Lukas</h3>
-                    <p>A 7-figure personal brand selling AI info products. I ran the entire marketing operation.</p>
+                    <p>A 7-figure personal brand selling AI info products. I ran the entire marketing operation — from ad creative to email, funnels, and team management.</p>
                 </div>
                 <div class="cmo-wins">
                     <h4>Key Wins</h4>
@@ -947,22 +1306,37 @@
                         <div class="win-card">
                             <div class="win-stat">$100K+</div>
                             <div class="win-label">Monthly Ad Spend</div>
-                            <div class="win-description">Launched profitable ad campaigns as stand-in Creative Strategist (even featured in a few)</div>
+                            <div class="win-description">Launched profitable campaigns as Creative Strategist</div>
                         </div>
                         <div class="win-card">
                             <div class="win-stat">+110%</div>
                             <div class="win-label">AOV Increase</div>
-                            <div class="win-description">Through funnel optimization: upsells and order bump strategy</div>
+                            <div class="win-description">Funnel optimization: upsells & order bumps</div>
                         </div>
                         <div class="win-card">
                             <div class="win-stat">5</div>
                             <div class="win-label">New Funnels</div>
-                            <div class="win-description">Launched in 10 months. One had a $66,000 profit launch in just 10 days.</div>
+                            <div class="win-description">Launched in 10 months. One hit $66K profit in 10 days.</div>
                         </div>
                         <div class="win-card">
                             <div class="win-stat">40K+</div>
                             <div class="win-label">Email Subscribers</div>
-                            <div class="win-description">Copy chiefed daily campaigns in Klaviyo. High open rates, click rates, and low spam triggers.</div>
+                            <div class="win-description">Daily Klaviyo campaigns with strong metrics</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cmo-testimonial">
+                    <div class="cmo-testimonial-content">
+                        <span class="cmo-testimonial-quote">"</span>
+                        <div class="cmo-testimonial-text">
+                            <p>We had a record month in September where we managed to quadruple our profit and increase the profit margin by 100%. Maarten has been definitely incremental to achieving that.</p>
+                            <div class="cmo-testimonial-author">
+                                <div class="author-avatar">D</div>
+                                <div class="author-info">
+                                    <h5>Deividas</h5>
+                                    <span>Owner of Triple Scale</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -970,7 +1344,10 @@
         </div>
     </section>
 
-    <section id="testimonials">
+    <div class="section-transition"></div>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section-alt">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-tag">Social Proof</span>
@@ -978,6 +1355,20 @@
             </div>
 
             <div class="testimonials-grid">
+                <div class="testimonial-card featured fade-in">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        I would HIGHLY recommend Maarten for building AI tools/workflows for your business. The guy downloaded my mind and created a golden agentic workflow to help my clients create sales pages.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">Z</div>
+                        <div class="author-info">
+                            <h5>Zac Hansen</h5>
+                            <span>7-Figure Productized Coach</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="testimonial-card fade-in">
                     <span class="testimonial-quote">"</span>
                     <p class="testimonial-text">
@@ -1027,6 +1418,9 @@
         </div>
     </section>
 
+    <div class="section-transition-reverse"></div>
+
+    <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header fade-in" style="text-align: center;">
